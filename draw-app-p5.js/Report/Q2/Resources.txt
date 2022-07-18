@@ -1,0 +1,42 @@
+Potential to add Layers : 
+https://cantwell-tom.medium.com/adding-layers-to-a-drawing-app-pt-1-efbc2adb1692
+
+Overall to better understand adding to DOM for a drawing app :
+https://www.youtube.com/watch?v=gG7aq6ccR8Q&ab_channel=ColorfulCoding
+
+Image rotation in P5 :
+
+https://stackoverflow.com/questions/45388765/how-to-rotate-image-in-p5-js 
+-- I made specific use of the actual rotation as in my own implmenetation I had issues where it would not rotate at my mouseX/mouseY. 
+-- I refactored code using https://editor.p5js.org/ then I implemented this into my project and  addedd the parts to the DOM and used my own values.
+https://p5js.org/reference/#/p5.Element
+https://p5js.org/reference/#/p5.Element/html
+++++++++++
+function rotate_and_draw_image(img_x, img_y, img_width, img_height, img_angle){
+  imageMode(CENTER);
+  translate(img_x+img_width/2, img_y+img_width/2);
+  rotate(PI/180*angle);
+  image(img, 0, 0, img_width, img_height);
+  rotate(-PI / 180 * img_angle);
+  translate(-(img_x+img_width/2), -(img_y+img_width/2));
+  imageMode(CORNER);
+}
+++++++++++
+
+for EraseNo/Erase :
+https://p5js.org/reference/#/p5/erase
+https://www.geeksforgeeks.org/p5-js-erase-function/
+
+I have not yet implemented bucket fill but I see a good article on Stack overflow which I will try and understand/refactor :
+
+https://stackoverflow.com/questions/63803791/flood-fill-tool-p5-js
+https://softwareengineering.stackexchange.com/questions/105580/what-is-the-best-bucket-fill-algorithm
+
+For CSS so far W3 schools :
+https://www.w3schools.com/cssref/default.asp
+https://www.w3schools.com/css/exercise.asp?filename=exercise_positioning2
+
+Codetrain Youtube channel
+
+
+

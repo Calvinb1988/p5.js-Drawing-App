@@ -1,0 +1,60 @@
+++++++++++
+Tools added 
+++++++++++
+
+Circle Tool
+Stamp Tool
+Custom Shape Tool
+Eraser Tool
+
+++++++++++
+Future Updates
+++++++++++
+General Changes -- 
+
+- Update the tool with custom images so that the overall aesthetic is consistent.
+- Update div's / CSS with consistent styles for sliders, radio buttons and text so that the overall aesthetic is consistent.
+- Update the placing of these elements so that they are more neat and structured 
+- Update tooling with future enhancements from course material (like cut copy paste etc.)
+
+FreeHand/Line Updatetool -- 
+
+- Update to allow changes to line stroke weight etc..
+
+Circle Tool -- 
+
+- Need to update the dragging evect to make it more natural. This currently drags from center
+- Change this to shape tool and add a list of shapes e.g. circle, rect, etc...
+- Need to remove the Fill from the shape so that it can be filled using the bucketFillTool
+
+Stamp Tool -- 
+
+- Currently this is based on a hex image, need to expand this out to other shapes
+- Refactor code to make is more generic for stamps in general
+- Did not implement the "number of stamps" as in the lecture as this is not overly useful. Instead added a rotation slider
+- Need to add image at mouseX, mouseY so that users know the orientation of the stamp before placing it.
+- Add a Stamp palette so that users can select additional stamps :
+-- Stamps can either be in the colout palette section or will make a selector drop down from the actual menu in the sidebar.
+
+Custom Shape Tool -- 
+
+- Currently can only drag vertexes, I want to look at making this compatible with curevertexes as well. this should allow 
+users to create straightlines and then add a curve to them once placed.
+- Also allow shape to be closed and filled using bucketFillTool
+
+Eraser Tool -- 
+
+- Place image at mouseX/mouseY so that its more evident to users what is being erased as right now the judgment is based one
+purely the mouse pointer alone.
+
+++++++++++
+Future tools still to be implemented
+++++++++++
+
+- Text tools allowing users to place text on canvas
+- BucketFill tool allowing users to fill objects
+
+++++++++++
+
+
+
