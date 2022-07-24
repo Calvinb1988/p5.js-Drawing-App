@@ -1,40 +1,49 @@
 # Draw Application Case Study
 
-Open the application in Brackets by dragging the folder from your Finder or Explorer into the Brackets window. Click on the live preview button to open the application in your browser. Try out all the tools in the drawing application; these are the four icons on the left of the screen. There is a freehand tool, a line draw tool, a spray can and a mirror draw tool. You’ll notice that the 'clear' and 'save' buttons don’t work yet. We’ll come to those soon.
-Read through the files
+Drawing application created using mostly the [p5.js](https://p5js.org/) library
 
-Before you get started altering the application, read through the various files that make up the drawing application template. There are quite a few of them but several should be familiar.
+You can view test the application here : [p5.js drawing app](https://github.com/Calvinb1988/p5.js-Drawing-App/blob/main/draw-app-p5.js/index.html)
 
-*Index.html:* The outlines of the HTML content of the application. This is a bit more complex than some of the other HTML files you will have seen in p5.js programmes. Some of this application is built on the DOM and outside of the canvas. There are also a lot of script imports. These files make up the rest of the application, along with p5.dom and the style sheet.
-*style.css:* The style sheet. As we are using the DOM, this handles the layout and look of the application. 
-*sketch.js:* The p5.js sketch, which declares any global variables, setup and draw.
-*p5.min.js:* The p5 library – thankfully we don’t have to know what goes on inside here!
-*colourPalette.js and toolbox.js:* These are two container functions that have been written for you. You don’t need to fully understand them but you might want to use some of their properties. For example, selectedTool gets the current tool that has been selected by the user.
-*helperFunctions.js:* A place to write functions that either don’t necessarily belong to objects or that you want to use multiple times. Right now, it contains click handlers for the 'clear' button and the 'save image' button.
-*lineToTool.js, freehandTool.js and mirrorDrawTool.js:* All tools that appear in the tool box. 
+As part of this there are a number of tools added. DOM manipulation was done using built in P5.js functions.
 
-For tools to work, they have to have: a property called 'icon', which is an URI for an image for the tool icon; a property called 'name', which is a string name for the tool; and a draw function.
+# Tools added
 
-## Task 1: Comment the lineToTool.js
-Comment the file so that another programmer can understand what it does and how it works. You might not have seen loadPixel and updatePixel functions before. Check them out in the p5 documentation and see what they do. Try commenting them out and seeing how it affects the running of the program (remember to uncomment the two lines again before submitting your code).
+## freehandTool.js
+This is a genetric tool that can be made thinner/thicker via the slider
 
-## Task 2: Turn sprayCan into a constructor function
-Currently the spray can tool is an object literal declared in the sketch file. Change it to a constructor function in its own file:
+## lineToTool.js
+This creates lines and can be made thinner/thicker via the slider. It maps the starting postition and the end position of mouseX/Y using the P5 loadPixels() which loads the pixel data for the display window into the pixels[] array. Once mouse is released updatePixels() is called to update the display window with the data in the pixels[] array. Used in conjunction with loadPixels().
 
-* Cut the spray can object literal from the sketch file and paste it into a new file. 
-* Save the file as sprayCanTool.js.
-* Rewrite the object literal as a constructor function called SprayCanTool(). Don’t forget that properties and methods are declared with this (e.g. this.points = 13 and this.draw = function()).
-* Delete the object literal from the file when you are done.
-* In the index.html file, add a new script tag for sprayCanTool.js.
-* In sketch.js change the toolbox.addTool(sprayCan); to create a new sprayCan.
+## sprayCanTool.js
+Spray can tool which places random points based on location of mouseX/Y. The amount of random points and the spread can be toggle with the Spread Size and Spray Density sliders respectively
 
-## Task 3: Complete the helper functions
-In the helperFunctions constructor, two event handlers are created to handle the save and clear buttons.
+## circleTool.js
+Genetric options drop down selection tool. Can place Circles or rectangle/squares and top the shape fill/noFill options.
 
-* Replace ??? on line 9 with the p5.js background function to reset the colour to white.
-* Replace ??? on line 19. In the p5.js reference guide, look up a function to save the canvas. Call this function so the user's drawing is saved to the hard disk.
+## stampTool.js
+Stamp tool which allows you select multiple options from a dropdown menu. The stamps can have their size altered as well as rotated based on a slider or an input box.
 
-## When you're done: 
-Some other things to do when you have finished:
-Take a look at the mirror tool. It’s a bit more complex than the others we have seen; see if you can work out how it works.
-Try to write some tools of your own. Maybe a rectangle tool and an ellipse tool.
+## mirrorDrawTool.js
+Creates a vertical or horizontal line based on canvas height/width. Based on your drawing on mouseX/Y is calculates your distance from the symmetry line and then replicates your drawing on either side.
+
+## customShapeTool.js
+Allows you to draw custom shapes by allowing you to place multiple lines on the page. based on the lines start/endpoints you are able to use the 'Add Vertices' button to select and manipulate each of the nodes. Once completed select "Finish Shape" to set the final shape
+
+## eraserTool.js
+Simple resizable circle which draws white to the canvas.
+
+## floodFillTool.js (Not optimized)
+When selected insstructs the colourPalette.js to use this.colours array = colours[i][2]. Runs floodFill Algorithm inorder to act as a fill tool.
+
+## highlighterTool.js
+When selected insstructs the colourPalette.js to use this.colours array = colours[i][1]. this is in essence the same as freehandTool.js using strokeCap(SQUARE); and the colourPalette.js to use a colour scheme with additional opacity.
+
+##clone.js
+Relies on the [copy() function](https://p5js.org/examples/image-copy-method.html) within P5.js. Allows a user to hold down ctrl and select a starting area. Then the user can draw at a separate location and it will copy the pixels/art from the initial location to the new mouseX/Y location.
+
+##kaleidoscope.js
+Based on [Kaleidoscope example](https://p5js.org/examples/interaction-kaleidoscope.html) on P5.js examples. used DOM manipulation and toggle top increase the symmetry lines within the kaleidoscope allowing for 6/8 branches.
+
+## Future additions 
+
+TBD
