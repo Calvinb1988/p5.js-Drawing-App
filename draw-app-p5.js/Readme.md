@@ -38,10 +38,10 @@ When selected insstructs the colourPalette.js to use this.colours array = colour
 ## highlighterTool.js
 When selected insstructs the colourPalette.js to use this.colours array = colours[i][1]. this is in essence the same as freehandTool.js using strokeCap(SQUARE); and the colourPalette.js to use a colour scheme with additional opacity.
 
-##clone.js
+## clone.js
 Relies on the [copy() function](https://p5js.org/examples/image-copy-method.html) within P5.js. Allows a user to hold down ctrl and select a starting area. Then the user can draw at a separate location and it will copy the pixels/art from the initial location to the new mouseX/Y location.
 
-##kaleidoscope.js
+## kaleidoscope.js
 Based on [Kaleidoscope example](https://p5js.org/examples/interaction-kaleidoscope.html) on P5.js examples. used DOM manipulation and toggle top increase the symmetry lines within the kaleidoscope allowing for 6/8 branches.
 
 ## Future additions 

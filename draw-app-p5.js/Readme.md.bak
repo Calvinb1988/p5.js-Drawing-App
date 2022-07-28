@@ -2,7 +2,7 @@
 
 Drawing application created using mostly the [p5.js](https://p5js.org/) library
 
-You can view test the application here : [p5.js drawing app](https://github.com/Calvinb1988/p5.js-Drawing-App/blob/main/draw-app-p5.js/index.html)
+You can view test the application here : [p5.js drawing app](http://htmlpreview.github.io/?https://github.com/Calvinb1988/p5.js-Drawing-App/blob/main/draw-app-p5.js/index.html)
 
 As part of this there are a number of tools added. DOM manipulation was done using built in P5.js functions.
 
